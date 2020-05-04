@@ -10,11 +10,22 @@ require_once('vendor/autoload.php');
 $f3 = Base::instance();
 
 // define a default route
-$f3->route('GET /', function(){
-    echo '<h1>week 5</h1>';
+$f3->route('GET /', function($f3){
+    //echo '<h1>week 5</h1>';
 
-/*    $view = new Template();
-    echo $view->render('views/home.html');*/
+    // create some variables in the hive
+    $f3->set('username', 'jshmo');
+    $f3->set('password', sha1('password'));
+    $f3->set('title', 'Working wih Templates');
+    $f3->set('temp', 67);
+    $f3->set('color', 'purple');
+    $f3->set('radius', 10);
+
+   //desserts array
+    $f3->set('desserts', array('chocolate'=>'Chocolate Mousse', 'vanilla'=>'Vanilla Custard', 'strawberry'=>'Strawberry Shortcake'));
+
+    $view = new Template();
+    echo $view->render('views/info.html');
 });
 
 // run fat free

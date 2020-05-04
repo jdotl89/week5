@@ -6,5 +6,19 @@
 </head>
 <body>
 
+    <h1>{{ @title }}</h1>
+
+    <p>You are logged in as {{ @username }} with password {{ @password }}</p>
+
+    <p> I like the color {{@color}}</p>
+
+    <p> Circumference: {{ round(2*3.14*@radius) }}</p>
+
+    <h2>Desserts</h2>
+    <repeat group="{{@desserts}}" key="{{@id}}" value="{{@text}}">
+        <input type="checkbox" value="{{@id}}">{{@text}}<br></repeat>
+
+
+
 </body>
 </html>
